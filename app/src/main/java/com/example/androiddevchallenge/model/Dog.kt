@@ -4,6 +4,7 @@ data class Dog(
     val id: Int,
     val name: String,
     val gender: Gender,
+    val photoRes: Int,
     val age: Float?,
     val breed: Breed,
     val background: String?,
