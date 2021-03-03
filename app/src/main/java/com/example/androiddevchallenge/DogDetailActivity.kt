@@ -20,10 +20,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.ExperimentalFoundationApi
 import com.example.androiddevchallenge.model.Dog
 import com.example.androiddevchallenge.ui.list.DogDetail
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
+@ExperimentalFoundationApi
 class DogDetailActivity : AppCompatActivity() {
 
     companion object {
