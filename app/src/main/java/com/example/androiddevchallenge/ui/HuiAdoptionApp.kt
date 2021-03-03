@@ -16,8 +16,14 @@
 package com.example.androiddevchallenge.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
@@ -28,8 +34,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -68,8 +76,16 @@ private fun AppContent(dogViewModel: DogViewModel) {
         },
         content = { innerPadding ->
             val modifier = Modifier.padding(innerPadding)
-            dogViewModel.dogs.value?.let {
-                DogList(dogs = it, modifier = modifier)
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(Modifier.size(15.dp))
+                HomeTitle()
+                Spacer(Modifier.size(15.dp))
+                dogViewModel.dogs.value?.let {
+                    DogList(dogs = it, modifier = modifier)
+                }
             }
         },
     )
@@ -86,16 +102,35 @@ private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
         items(dogs) { dog ->
             DogCard(
                 dog,
-                modifier.clickable {
-                    DogDetailActivity.start(context, dog)
-                }.padding(5.dp)
+                modifier
+                    .clickable {
+                        DogDetailActivity.start(context, dog)
+                    }
+                    .padding(5.dp)
             )
         }
     }
 }
 
-@ExperimentalFoundationApi
+@Composable
+fun HomeTitle() {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Image(
+            painter = painterResource(id = R.drawable.dog),
+            contentDescription = null,
+            modifier = Modifier.size(35.dp, 35.dp).padding(end = 10.dp),
+        )
+        Text(text = "Welcome To Hui Adoption !", style = MaterialTheme.typography.h6)
+    }
+}
 
+@Preview
+@Composable
+fun HomeTitlePreview() {
+    HomeTitle()
+}
+
+@ExperimentalFoundationApi
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
