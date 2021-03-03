@@ -21,7 +21,8 @@ import com.example.androiddevchallenge.model.Dog
 import com.example.androiddevchallenge.model.Gender
 
 val dogsFakeList = listOf(
-    Dog(id = 1,
+    Dog(
+        id = 1,
         name = "sijia",
         gender = Gender.GIRL,
         photoRes = R.drawable.sijia,
@@ -29,7 +30,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued in the dog meat car",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -37,7 +39,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -45,7 +48,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -53,7 +57,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -61,7 +66,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -69,7 +75,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -77,7 +84,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -85,7 +93,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,
@@ -93,7 +102,8 @@ val dogsFakeList = listOf(
         breed = Breed.Labrador,
         background = "rescued from the dog dealer",
     ),
-    Dog(id = 2,
+    Dog(
+        id = 2,
         name = "siji",
         gender = Gender.GIRL,
         photoRes = R.drawable.siji,

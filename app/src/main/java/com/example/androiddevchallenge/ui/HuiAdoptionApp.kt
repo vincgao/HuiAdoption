@@ -83,9 +83,12 @@ private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
         cells = GridCells.Adaptive(minSize = 128.dp)
     ) {
         items(dogs) { dog ->
-            DogCard(dog, modifier.clickable {
-                DogDetailActivity.start(context, dog)
-            })
+            DogCard(
+                dog,
+                modifier.clickable {
+                    DogDetailActivity.start(context, dog)
+                }
+            )
         }
     }
 

@@ -26,7 +26,7 @@ data class Dog(
     val age: Float?,
     val breed: Breed,
     val background: String?,
-): Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
@@ -61,7 +61,6 @@ data class Dog(
             return arrayOfNulls(size)
         }
     }
-
 }
 
 enum class Gender {
