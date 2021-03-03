@@ -1,5 +1,7 @@
 package com.example.androiddevchallenge.ui
 
+import android.content.Context
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -9,10 +11,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.androiddevchallenge.DogDetailActivity
 import com.example.androiddevchallenge.DogViewModel
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.model.Dog
@@ -54,11 +58,14 @@ private fun AppContent(dogViewModel: DogViewModel) {
 
 @Composable
 private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
+    val context = LocalContext.current
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = modifier.padding(horizontal = 16.dp)) {
         items(dogs) { dog ->
-            DogCard(dog, modifier)
+            DogCard(dog, modifier.clickable {
+                DogDetailActivity.start(context, dog)
+            })
         }
     }
 }
