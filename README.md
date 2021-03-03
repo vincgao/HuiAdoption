@@ -16,6 +16,7 @@ You can check the link below for more information about Hui Adoption.
 https://mp.weixin.qq.com/s/FxJG_tX6XpqIIoGWec5s1Q
 
 Wechat QR code:
+
 <img src="/wechat_qrcode.bmp">
 
 ## :bulb: Motivation and Context
