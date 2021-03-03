@@ -5,7 +5,7 @@ import com.example.androiddevchallenge.model.Breed
 import com.example.androiddevchallenge.model.Dog
 import com.example.androiddevchallenge.model.Gender
 
-val dogs = listOf(
+val dogsFakeList = listOf(
     Dog(id = 1,
         name = "sijia",
         gender = Gender.GIRL,

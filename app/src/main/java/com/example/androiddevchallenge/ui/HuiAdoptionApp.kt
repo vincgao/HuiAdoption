@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.ui
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -8,22 +9,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.androiddevchallenge.DogViewModel
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.model.Dog
+import com.example.androiddevchallenge.ui.list.DogCard
 import com.example.androiddevchallenge.ui.list.DogListScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
-fun HuiAdoptionApp() {
+fun HuiAdoptionApp(dogViewModel: DogViewModel = viewModel()) {
     MyTheme {
         Surface(color = MaterialTheme.colors.background) {
-            AppContent()
+            AppContent(dogViewModel)
         }
     }
 }
 
 @Composable
-private fun AppContent() {
+private fun AppContent(dogViewModel: DogViewModel) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -38,15 +42,18 @@ private fun AppContent() {
         },
         content = { innerPadding ->
             val modifier = Modifier.padding(innerPadding)
+            dogViewModel.dogs.value?.let {
+                DogList(dogs = it, modifier = modifier)
+            }
         },
     )
 }
 
 @Composable
 private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier.padding(horizontal = 16.dp)) {
+    Column(modifier = modifier.padding(horizontal = 16.dp)) {
         dogs.forEach { dog ->
-
+            DogCard(dog, modifier)
         }
     }
 }
