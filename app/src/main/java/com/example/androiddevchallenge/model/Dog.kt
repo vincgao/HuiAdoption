@@ -68,5 +68,26 @@ enum class Gender {
 }
 
 enum class Breed {
-    Labrador, Alaskan, Husky, Samoyed
+    Labrador,
+    Alaskan,
+    Husky,
+    Samoyed,
+    Tugou,
+    BorderCollie,
+    OldEnglishSheep,
+    Wolf,
+    BelgianMalinois,
+    ChowChow,
+    Rottweiler,
+    Poodle,
+    BelingtonTerrier,
+    YorkshireTerrier,
+    Bully,
+    AmericanCockerSpaniel,
+    PitBull,
+    Greyhound,
+    GoldenRetriever,
+    ShibaInu,
+    BullDog,
+    SpringerSpaniel
 }
