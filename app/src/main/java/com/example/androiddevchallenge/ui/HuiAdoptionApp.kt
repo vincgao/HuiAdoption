@@ -1,8 +1,11 @@
 package com.example.androiddevchallenge.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -51,8 +54,10 @@ private fun AppContent(dogViewModel: DogViewModel) {
 
 @Composable
 private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
-    Column(modifier = modifier.padding(horizontal = 16.dp)) {
-        dogs.forEach { dog ->
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = modifier.padding(horizontal = 16.dp)) {
+        items(dogs) { dog ->
             DogCard(dog, modifier)
         }
     }
