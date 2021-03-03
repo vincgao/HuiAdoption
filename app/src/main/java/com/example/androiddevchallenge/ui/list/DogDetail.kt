@@ -96,7 +96,17 @@ fun DogDetail(dog: Dog) {
         ProvideTextStyle(MaterialTheme.typography.h6) {
             Text(text = "Breed: ${dog.breed.name}")
             Text(text = "Gender: ${dog.gender.name}")
-            Text(text = "Age: ${dog.age?.toString() ?: "Not Known"}")
+            when {
+                dog.age == null -> {
+                    Text(text = "Age: Not Known")
+                }
+                dog.age < 1f -> {
+                    Text(text = "Age: ${(dog.age * 12).toInt()} months old")
+                }
+                else -> {
+                    Text(text = "Age: ${dog.age.toInt()} years old")
+                }
+            }
             Text(text = "Background: ${dog.background}")
         }
 
