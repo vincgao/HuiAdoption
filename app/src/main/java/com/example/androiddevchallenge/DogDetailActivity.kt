@@ -24,7 +24,10 @@ class DogDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                DogDetail(dog = intent.getParcelableExtra("dog")!!)
+                DogDetail(
+                    dog = intent.getParcelableExtra("dog")!!,
+                    onBack = { finish() }
+                )
             }
         }
     }
