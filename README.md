@@ -22,7 +22,7 @@ Wechat QR code:
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
-I use real data and make our volunteers in Beijing can use this app in the feature.
+I use real data to enable our volunteers in Beijing to use this app in the feature.
 
 
 ## :camera_flash: Screenshots
