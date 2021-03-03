@@ -80,28 +80,18 @@ private fun AppContent(dogViewModel: DogViewModel) {
 private fun DogList(dogs: List<Dog>, modifier: Modifier = Modifier) {
     val context = LocalContext.current
     LazyVerticalGrid(
-        cells = GridCells.Adaptive(minSize = 128.dp)
+        cells = GridCells.Adaptive(minSize = 150.dp),
+        modifier = modifier.padding(5.dp)
     ) {
         items(dogs) { dog ->
             DogCard(
                 dog,
                 modifier.clickable {
                     DogDetailActivity.start(context, dog)
-                }
+                }.padding(5.dp)
             )
         }
     }
-
-//    LazyColumn(
-//        verticalArrangement = Arrangement.spacedBy(4.dp),
-//        modifier = modifier.fillMaxWidth()
-//            .padding(horizontal = 16.dp)) {
-//        items(dogs) { dog ->
-//            DogCard(dog, modifier.clickable {
-//                DogDetailActivity.start(context, dog)
-//            })
-//        }
-//    }
 }
 
 @ExperimentalFoundationApi
